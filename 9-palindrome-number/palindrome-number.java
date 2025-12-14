@@ -3,8 +3,8 @@ class Solution {
         int revNum=0;
         int dup=x;
         while(x>0){
-            int lastDigit=x%10;
-            revNum= (revNum*10)+ lastDigit;
+            
+            revNum= (revNum*10)+ x%10;
             x=x/10;
         }
         if(revNum==dup) return true;
