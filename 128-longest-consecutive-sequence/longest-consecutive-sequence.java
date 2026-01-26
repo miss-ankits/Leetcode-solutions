@@ -3,8 +3,8 @@ class Solution {
         int longest=1;
         if(nums.length==0) return 0;
         Set<Integer> set=new HashSet<>();
-        for(int i=0;i<nums.length;i++){
-        set.add(nums[i]);
+        for(int num:nums){
+        set.add(num);
         }
         for(int i:set){
             if(!set.contains(i-1)){
