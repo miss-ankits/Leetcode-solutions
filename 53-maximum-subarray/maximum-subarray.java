@@ -6,7 +6,7 @@ class Solution {
                 sum=0;
             } 
             sum+=nums[i];
-                max=Math.max(sum,max);
+            max=Math.max(sum,max);
         }
         return max;
     }
