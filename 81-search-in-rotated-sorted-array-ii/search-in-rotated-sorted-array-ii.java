@@ -4,8 +4,11 @@ class Solution {
         while(start<=end){
         int mid=start+(end-start)/2;
         if(nums[mid]==target) return true;
-        if(nums[mid]==nums[start]) {start++;
-        continue;}
+        if(nums[mid]==nums[start] && nums[mid]==nums[end]) {
+            start++;
+            end--;
+            continue;
+        }
         if(nums[mid]<=nums[end]){ //right sorted
             if(nums[mid]<=target && target <= nums[end]){ //target lies in btwn
                 start=mid+1;
