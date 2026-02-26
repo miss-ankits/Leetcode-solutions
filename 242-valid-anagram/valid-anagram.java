@@ -7,7 +7,7 @@ class Solution {
         }
         for(int i=0;i<t.length();i++){
             char ch=t.charAt(i);
-            if(!map.containsKey(ch) || map.get(ch)==0){
+            if(!map.containsKey(ch)|| map.get(ch)==0){
                 return false;
             }
             map.put(ch,map.get(ch)-1);
