@@ -10,14 +10,22 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode curr=head;
-        ListNode prev=null;
-        while(curr!=null){
-            ListNode temp=curr.next;//stores the next pointer
-            curr.next=prev; //reverse
-            prev=curr; //new head
-            curr=temp; //traverse curr to next node
-            }
-        return prev;
-    }
+            if(head==null || head.next==null) return head;
+            ListNode newHead=reverseList(head.next);
+            ListNode front=head.next;
+            front.next=head;
+            head.next=null;
+            return newHead;
+        }
 }
+//         ListNode curr=head;
+//         ListNode prev=null;
+//         while(curr!=null){
+//             ListNode temp=curr.next;//stores the next pointer
+//             curr.next=prev; //reverse
+//             prev=curr; //new head
+//             curr=temp; //traverse curr to next node
+//             }
+//         return prev;
+//     }
+// }
