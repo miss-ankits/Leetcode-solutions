@@ -34,13 +34,13 @@ class Solution {
     ListNode second=rev;
     while(rev!=null){
         if(temp.val!=rev.val) {
-            slow.next=reverse(second);
+            //slow.next=reverse(second);
             return false;
         }
     rev=rev.next;
     temp=temp.next;
     }
-    slow.next=reverse(second);
+    //slow.next=reverse(second);
     return true;
     }
     
