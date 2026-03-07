@@ -32,12 +32,12 @@ class Solution {
     //slow.next=null;
     ListNode temp=head;
     ListNode second=rev;
-    while(rev!=null){
-        if(temp.val!=rev.val) {
+    while(second!=null){
+        if(temp.val!=second.val) {
             //slow.next=reverse(second);
             return false;
         }
-    rev=rev.next;
+    second=second.next;
     temp=temp.next;
     }
     //slow.next=reverse(second);
