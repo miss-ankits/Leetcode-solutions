@@ -9,8 +9,43 @@
  * }
  */
 class Solution {
+    public ListNode reverse(ListNode head){
+        ListNode prev=null;
+        ListNode curr=head;
+        while(curr!=null){
+            ListNode next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        return prev; //new head
+    }
     public boolean isPalindrome(ListNode head) {
-        //two Pointer
+
+    ListNode fast=head;
+    ListNode slow=head;
+    while(fast.next!=null && fast.next.next!=null){ //find mid node
+        fast=fast.next.next;
+        slow=slow.next;
+    }
+    ListNode rev=reverse(slow.next); //reverse the second half
+    slow.next=null;
+    ListNode temp=head;
+    ListNode second=rev;
+    while(rev!=null){
+        if(temp.val!=rev.val) {
+            slow.next=reverse(second);
+            return false;
+        }
+    rev=rev.next;
+    temp=temp.next;
+    }
+    slow.next=reverse(second);
+    return true;
+    }
+    
+
+    //two Pointer using ArrayList
     //     List<Integer> list=new ArrayList<>();
     //     while(head!=null){
     //         list.add(head.val);
@@ -25,17 +60,16 @@ class Solution {
     // }
 
     //stack
-    Stack<Integer> st=new Stack<>();
-    ListNode curr=head;
-    while(curr!=null){
-        st.push(curr.val);
-        curr=curr.next;
-    }
-    curr=head;
-    while(curr!=null && st.pop()==curr.val){
-        curr=curr.next;
-    }
-    return curr==null;
-    }
-    
+    // Stack<Integer> st=new Stack<>();
+    // ListNode curr=head;
+    // while(curr!=null){
+    //     st.push(curr.val);
+    //     curr=curr.next;
+    // }
+    // curr=head;
+    // while(curr!=null && st.pop()==curr.val){
+    //     curr=curr.next;
+    // }
+    // return curr==null;
+    // }
 }
