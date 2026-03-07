@@ -29,7 +29,7 @@ class Solution {
         slow=slow.next;
     }
     ListNode rev=reverse(slow.next); //reverse the second half
-    slow.next=null;
+    //slow.next=null;
     ListNode temp=head;
     ListNode second=rev;
     while(rev!=null){
