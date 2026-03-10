@@ -35,14 +35,13 @@ class Solution {
         while(node1!=null && node2!=null){
             if(node1.val>node2.val){
             temp.next=node2;
-            temp=node2;
             node2=node2.next;
             }
             else{
                 temp.next=node1;
-                temp=node1;
                 node1=node1.next;
             }
+            temp=temp.next;
         }
         if(node1!=null){ //leftover nodes
             temp.next=node1;
