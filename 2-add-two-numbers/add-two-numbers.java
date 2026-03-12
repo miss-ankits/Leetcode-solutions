@@ -23,7 +23,7 @@ class Solution {
             carry=sum/10;
 
             temp.next=newNode;
-            temp=temp.next;
+            temp=newNode;
 
             if(node1!=null) node1=node1.next;
             if(node2!=null) node2=node2.next;
