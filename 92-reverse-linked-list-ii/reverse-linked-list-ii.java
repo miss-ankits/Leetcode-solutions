@@ -15,13 +15,13 @@ class Solution {
         dummyNode.next=head;
         ListNode prev=dummyNode;
         for(int i=0;i<left-1;i++){
-            prev=prev.next;
+            prev=prev.next; //node before the reversal
         }
         ListNode curr=prev.next; //preserve node
         for(int i=left;i<right;i++){
             ListNode front=curr.next;
-            curr.next=front.next;
-            front.next=prev.next;
+            curr.next=front.next; //replacing node after curr
+            front.next=prev.next; //putting curr.next to the front
             prev.next=front;
         }
         return dummyNode.next;
