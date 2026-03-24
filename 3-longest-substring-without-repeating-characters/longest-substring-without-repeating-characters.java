@@ -7,10 +7,10 @@ class Solution {
         int n=s.length();
         while(right<n){
             if(map.containsKey(s.charAt(right))){
-                left=Math.max(map.get(s.charAt(right))+1,left); 
+                left=Math.max(map.get(s.charAt(right))+1,left); //keeps window from moving backward
             }
-            map.put(s.charAt(right),right); 
-            length=Math.max(length,right-left+1);
+            map.put(s.charAt(right),right); //if not present in map and update if present
+            length=Math.max(length,right-left+1); //length of longest substring
             right++;
         }
         return length;
