@@ -7,9 +7,10 @@ class Solution {
             int type=fruits[r];
             map.put(type,map.getOrDefault(type,0)+1);
             if(map.size()>2){
-                map.put(fruits[l],map.get(fruits[l])-1);
-                if(map.get(fruits[l])==0){
-                    map.remove(fruits[l]);
+                int left=fruits[l];
+                map.put(left,map.get(left)-1);
+                if(map.get(left)==0){
+                    map.remove(left);
                 }
             l++;
             }
