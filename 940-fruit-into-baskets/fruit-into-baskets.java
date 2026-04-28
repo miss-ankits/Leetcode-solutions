@@ -8,15 +8,15 @@ class Solution {
             map.put(type,map.getOrDefault(type,0)+1);
             if(map.size()>2){
                 int left=fruits[l];
-                map.put(left,map.get(left)-1);
+                map.put(left,map.get(left)-1); //decrease window size if more than 2
                 if(map.get(left)==0){
                     map.remove(left);
                 }
             l++;
             }
-            maxLen=Math.max(maxLen,r-l+1);
+            //maxLen=Math.max(maxLen,r-l+1);
             r++;
         }
-        return maxLen;
+        return r-l;
     }
 }
