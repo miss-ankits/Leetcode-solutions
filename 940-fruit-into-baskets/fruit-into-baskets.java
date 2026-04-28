@@ -4,7 +4,8 @@ class Solution {
         int n=fruits.length;
         Map<Integer,Integer> map = new HashMap<>();
         while(r<n){
-            map.put(fruits[r],map.getOrDefault(fruits[r],0)+1);
+            int type=fruits[r];
+            map.put(type,map.getOrDefault(type,0)+1);
             if(map.size()>2){
                 map.put(fruits[l],map.get(fruits[l])-1);
                 if(map.get(fruits[l])==0){
