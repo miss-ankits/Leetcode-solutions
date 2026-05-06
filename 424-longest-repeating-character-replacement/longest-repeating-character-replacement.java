@@ -1,10 +1,12 @@
 class Solution {
     public int characterReplacement(String s, int k) {
         int maxLen=0,l=0,r=0,maxFreq=0;
+        int n=s.length();
         Map<Character,Integer> map=new HashMap<>();
-        while(r<s.length()){
+        while(r<n){
             char right=s.charAt(r);
             map.put(right,map.getOrDefault(right,0)+1);
+            //maxFreq=len of subarray-k;
             maxFreq=Math.max(maxFreq,map.get(right));
             if(r-l+1-maxFreq>k){
                 map.put(s.charAt(l),map.get(s.charAt(l))-1);
