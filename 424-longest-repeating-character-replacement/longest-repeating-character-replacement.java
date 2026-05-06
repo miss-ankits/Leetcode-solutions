@@ -7,6 +7,7 @@ class Solution {
             freq[s.charAt(r)-'A']++;
             //maxFreq=len of subarray-k;
             maxFreq=Math.max(maxFreq,freq[s.charAt(r)-'A']);
+            //window size-maxFreq letter>k
             if(r-l+1-maxFreq>k){
                 freq[s.charAt(l)-'A']--;
                 l++;
