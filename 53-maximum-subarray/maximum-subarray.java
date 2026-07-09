@@ -9,5 +9,9 @@ class Solution {
             max=Math.max(sum,max);
         }
         return max;
+        //follow up question:solve it in divide and conquer way
+    //take start end and pivot index(middle),
+    //start counting the max sum from pivot to start and pivot+1 to end,
+    //add both to find max subarray sum
     }
 }
